@@ -48,14 +48,14 @@ for comment in all_comments:
 				last = len(entry) 
 				last2 = last - 1 
 						#if it starts with a vowel, just add -ay
-				snoopComment += entry[1:last2] + "izzle" + " "
+				snoopComment += entry[0:last2] + "izzle" + " "
 			
 			#clear punctuation for next word
 				punct = ''
 
 		#comment result
 			comment.reply(signature + snoopComment)
-
+			snoopComment = ''
 		#clear for next comment
 			our_comment = ''
 
