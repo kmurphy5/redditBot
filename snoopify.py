@@ -7,9 +7,9 @@ import praw, re ,pprint
 #gets password
 with open('passwords.txt', 'r') as passFile:
 	password = passFile.read()
-	
-	with open('user.txt', 'r') as uFile:
-		userName = uFile.read()
+
+with open('user.txt', 'r') as uFile:
+	userName = uFile.read()
 
 
 r = praw.Reddit('Snoop Translator by u/kmurph45 v0.1.')
@@ -21,13 +21,16 @@ all_comments = r.get_comments('tessst')
 
 
 #Maintain a list of comments that have been translated so we don't spam
-beenDone = alreadyDone = open('done.txt', 'a+')
+beenDone = = open('done.txt', 'a+')
 snoopComment = ''
 punct = ''
 signature = 'Snoop Dog be like \n\n'
 PUNCTUATION = (".", ",", ":", "?", "!", ";")
 
-while True:
+
+
+
+#while True:
 	
 
 
@@ -45,10 +48,10 @@ while True:
 				last = len(entry) 
 				last2 = last - 1 
 						#if it starts with a vowel, just add -ay
-			snoopComment += entry[0:last2] + "izzle" + punct
+				snoopComment += entry[0:last2] + "izzle" + punct
 			
 			#clear punctuation for next word
-			punct = ''
+				punct = ''
 
 		#comment result
 			comment.reply(signature + snoopComment)
