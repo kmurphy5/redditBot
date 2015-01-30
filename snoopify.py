@@ -24,9 +24,9 @@ if not os.path.isfile("beenDone.txt"):
 else:
     print "Loading previous reply ids"
     with open("beenDone.txt", "r") as f:
-        replies = f.read()
-        replies = replies.split("\n")
-        replies = filter(None, replies)
+        beenDone = f.read()
+        beenDone = beenDone.split("\n")
+        beenDone = filter(None, replies)
 
 
 all_comments = r.get_comments('tessst')
@@ -68,4 +68,9 @@ for comment in all_comments:
 		#clear for next comment
 			our_comment = ''
 
-			beenDone.write(comment.id)
+print "Saving ids to file"
+with open("beenDone.txt", "w") as f:
+	for i in replies:
+		f.write(i + "\n")
+		
+		print "Saved to file"
