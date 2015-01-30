@@ -2,7 +2,7 @@
 # snoopify.py
 # changes comments into snoop dog/lions language
 
-import praw, re
+import praw, re ,pprint
 
 #gets password
 with open('passwords.txt', 'r') as passFile:
@@ -21,7 +21,7 @@ all_comments = r.get_comments('tessst')
 
 
 #Maintain a list of comments that have been translated so we don't spam
-beenDone = set()
+beenDone = alreadyDone = open('done.txt', 'a+')
 snoopComment = ''
 punct = ''
 signature = 'Snoop Dog be like \n\n'
@@ -32,7 +32,7 @@ PUNCTUATION = (".", ",", ":", "?", "!", ";")
 for comment in all_comments:
 
 	#Find comments containing "Pig Latin"
-	if "snoopIt" in comment.body and comment.id not in beenDone:
+	if "snoopIt" in comment.body and comment.id not in beenDone.read():
 		words = re.split(' ', comment.body)
 		#words is a list of the words in the comment
 		
@@ -51,4 +51,4 @@ for comment in all_comments:
 		#clear for next comment
 		our_comment = ''
 
-		beenDone.add(comment.id)
+		beenDone.write(comment.id)
