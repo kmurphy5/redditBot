@@ -42,7 +42,7 @@ for comment in all_comments:
 		our_comment += entry[0:last] + "izzle" + punct + " "
 			
 			#clear punctuation for next word
-			punct = ''
+		punct = ''
 
 		#comment result
 		comment.reply(signature + snoopComment)
