@@ -35,7 +35,7 @@ PUNCTUATION = (".", ",", ":", "?", "!", ";")
 
 
 #evaluate comments without worrying about their rank
-	for comment in all_comments:
+for comment in all_comments:
 	
 
 	#Find comments containing "Pig Latin"
