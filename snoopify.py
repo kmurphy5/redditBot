@@ -37,9 +37,10 @@ for comment in all_comments:
 		#words is a list of the words in the comment
 		
 		for entry in words:
-			last = len(entry) -1 
+			last = len(entry) 
+			last2 = last - 1 
 						#if it starts with a vowel, just add -ay
-		our_comment += entry[0:last] + "izzle" + punct + " "
+		snoopComment += entry[0:last2] + "izzle" + punct
 			
 			#clear punctuation for next word
 		punct = ''
