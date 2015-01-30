@@ -48,7 +48,7 @@ for comment in all_comments:
 				last = len(entry) 
 				last2 = last - 1 
 						#if it starts with a vowel, just add -ay
-				snoopComment += entry[0:last2] + "izzle" + punct
+				snoopComment += entry[1:last2] + "izzle" + " "
 			
 			#clear punctuation for next word
 				punct = ''
