@@ -21,7 +21,7 @@ all_comments = r.get_comments('tessst')
 
 
 #Maintain a list of comments that have been translated so we don't spam
-beenDone = = open('done.txt', 'a+')
+beenDone = open('done.txt', 'a+')
 snoopComment = ''
 punct = ''
 signature = 'Snoop Dog be like \n\n'
