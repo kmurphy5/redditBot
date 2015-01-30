@@ -70,7 +70,7 @@ for comment in all_comments:
 
 print "Saving ids to file"
 with open("beenDone.txt", "w") as f:
-	for i in replies:
+	for i in beenDone:
 		f.write(i + "\n")
 		
 		print "Saved to file"
