@@ -1,2 +1,2 @@
-# redditBot
+# snoopify
 Bot for reddit

@@ -5,19 +5,24 @@
 import praw, re
 
 #gets password
-with open('pass.txt', 'r') as pass_file:
-	password = pass_file.read()
+with open('passwords.txt', 'r') as passFile:
+	password = passFile.read()
+	
+	with open('user.txt', 'r') as uFile:
+		userName = uFile.read()
 
-r = praw.Reddit('Pig Latin Translator by /u/just_another_sheep v0.2. ')
-r.login('kmurphy5', str(password)[:-1])
+
+r = praw.Reddit('Snoop Translator by u/kmurph45 v0.1.')
+r.login(str(userName)[:-1], str(password)[:-1])
+
 #main loop - look at posts from /r/all - switch to /r/test for debugging
 
-all_comments = r.get_comments('test')
+all_comments = r.get_comments('tessst')
 
 
 #Maintain a list of comments that have been translated so we don't spam
 beenDone = set()
-our_comment = ''
+snoopComment = ''
 punct = ''
 signature = 'Snoop Dog be like \n\n'
 PUNCTUATION = (".", ",", ":", "?", "!", ";")
@@ -40,7 +45,7 @@ for comment in all_comments:
 			punct = ''
 
 		#comment result
-		comment.reply(signature + our_comment)
+		comment.reply(signature + snoopComment)
 
 		#clear for next comment
 		our_comment = ''
