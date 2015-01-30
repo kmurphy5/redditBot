@@ -2,7 +2,10 @@
 # snoopify.py
 # changes comments into snoop dog/lions language
 
-import praw, re ,pprint
+import praw 
+import re 
+import pprint
+import os
 
 #gets password
 with open('passwords.txt', 'r') as passFile:
@@ -16,19 +19,25 @@ r = praw.Reddit('Snoop Translator by u/kmurph45 v0.1.')
 r.login(str(userName)[:-1], str(password)[:-1])
 
 #main loop - look at posts from /r/all - switch to /r/test for debugging
+if not os.path.isfile("replies.txt"):
+    beenDone = []
+else:
+    print "Loading previous reply ids"
+    with open("beendDone.txt", "r") as f:
+        replies = f.read()
+        replies = replies.split("\n")
+        replies = filter(None, replies)
 
-all_comments = r.get_comments('tessst')
+
+all_comments = r.get_subreddit('tessst')
 
 
 #Maintain a list of comments that have been translated so we don't spam
-beenDone = open('done.txt', 'a+')
+
 snoopComment = ''
 punct = ''
 signature = 'Snoop Dog be like \n\n'
 PUNCTUATION = (".", ",", ":", "?", "!", ";")
-
-
-
 
 #while True:
 	
@@ -36,8 +45,8 @@ PUNCTUATION = (".", ",", ":", "?", "!", ";")
 
 #evaluate comments without worrying about their rank
 for comment in all_comments:
+	if comment.id not in beenDone:
 	
-
 	#Find comments containing "Pig Latin"
 		if "snoopIt" in comment.body and comment.id not in beenDone.read():
 			words = re.split(' ', comment.body)
