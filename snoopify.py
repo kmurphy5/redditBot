@@ -18,8 +18,8 @@ with open('user.txt', 'r') as uFile:
 r = praw.Reddit('Snoop Translator by u/kmurph45 v0.1.')
 r.login(str(userName)[:-1], str(password)[:-1])
 
-#main loop - look at posts from /r/all - switch to /r/test for debugging
-if not os.path.isfile("replies.txt"):
+
+if not os.path.isfile("beenDone.txt"):
     beenDone = []
 else:
     print "Loading previous reply ids"
@@ -46,8 +46,8 @@ PUNCTUATION = (".", ",", ":", "?", "!", ";")
 #evaluate comments without worrying about their rank
 for comment in all_comments:
 	if comment.id not in beenDone:
-	
-	#Find comments containing "Pig Latin"
+		
+
 		if "snoopIt" in comment.body and comment.id not in beenDone.read():
 			words = re.split(' ', comment.body)
 		#words is a list of the words in the comment
