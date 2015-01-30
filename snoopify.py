@@ -27,29 +27,33 @@ punct = ''
 signature = 'Snoop Dog be like \n\n'
 PUNCTUATION = (".", ",", ":", "?", "!", ";")
 
+while True:
+	
+
 
 #evaluate comments without worrying about their rank
-for comment in all_comments:
-	while True:
+	for comment in all_comments:
+	
 
 	#Find comments containing "Pig Latin"
-	if "snoopIt" in comment.body and comment.id not in beenDone.read():
-		words = re.split(' ', comment.body)
+		if "snoopIt" in comment.body and comment.id not in beenDone.read():
+			words = re.split(' ', comment.body)
 		#words is a list of the words in the comment
 		
-		for entry in words:
-			last = len(entry) 
-			last2 = last - 1 
+			for entry in words:
+				
+				last = len(entry) 
+				last2 = last - 1 
 						#if it starts with a vowel, just add -ay
-		snoopComment += entry[0:last2] + "izzle" + punct
+			snoopComment += entry[0:last2] + "izzle" + punct
 			
 			#clear punctuation for next word
-		punct = ''
+			punct = ''
 
 		#comment result
-		comment.reply(signature + snoopComment)
+			comment.reply(signature + snoopComment)
 
 		#clear for next comment
-		our_comment = ''
+			our_comment = ''
 
-		beenDone.write(comment.id)
+			beenDone.write(comment.id)
