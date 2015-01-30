@@ -52,7 +52,7 @@ for comment in all_comments:
 			words = re.split(' ', comment.body)
 		#words is a list of the words in the comment
 		
-			for entry in words:
+			for entry[0:] in words:
 				
 				last = len(entry) 
 				last2 = last - 1 
