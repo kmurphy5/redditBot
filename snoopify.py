@@ -23,7 +23,7 @@ if not os.path.isfile("beenDone.txt"):
     beenDone = []
 else:
     print "Loading previous reply ids"
-    with open("beendDone.txt", "r") as f:
+    with open("beenDone.txt", "r") as f:
         replies = f.read()
         replies = replies.split("\n")
         replies = filter(None, replies)
