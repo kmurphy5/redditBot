@@ -26,7 +26,7 @@ else:
     with open("beenDone.txt", "r") as f:
         beenDone = f.read()
         beenDone = beenDone.split("\n")
-        beenDone = filter(None, replies)
+        beenDone = filter(None, beenDone)
 
 
 all_comments = r.get_comments('tessst')
