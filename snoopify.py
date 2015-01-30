@@ -30,6 +30,7 @@ PUNCTUATION = (".", ",", ":", "?", "!", ";")
 
 #evaluate comments without worrying about their rank
 for comment in all_comments:
+	while True:
 
 	#Find comments containing "Pig Latin"
 	if "snoopIt" in comment.body and comment.id not in beenDone.read():
