@@ -50,14 +50,15 @@ for comment in all_comments:
 
 		if "snoopIt" in comment.body and comment.id not in beenDone:
 			words = re.split(' ', comment.body)
+			words.pop(0)
 		#words is a list of the words in the comment
 		
-			for entry[0:] in words:
+			for entry in words:
 				
-				last = len(entry) 
-				last2 = last - 1 
+				last = len(entry) -1
+			
 						#if it starts with a vowel, just add -ay
-				snoopComment += entry[0:last2] + "izzle" + " "
+				snoopComment += entry[0:last] + "izzle" + " "
 			
 			#clear punctuation for next word
 				punct = ''
