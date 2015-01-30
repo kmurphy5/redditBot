@@ -48,7 +48,7 @@ for comment in all_comments:
 	if comment.id not in beenDone:
 		
 
-		if "snoopIt" in comment.body and comment.id not in beenDone.read():
+		if "snoopIt" in comment.body and comment.id not in beenDone:
 			words = re.split(' ', comment.body)
 		#words is a list of the words in the comment
 		
