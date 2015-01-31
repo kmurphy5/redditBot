@@ -39,7 +39,7 @@ snoopComment = ''
 punct = ''
 signature = 'Snoop Dog be like \n\n'
 punctuation = (".", ",", ":", "?", "!", ";")
-vow = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
+vow = ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
 
 
 
@@ -56,14 +56,16 @@ while True:
 	
 
 
-#evaluate comments without worrying about their rank
+#evaluate comments for reply
 	for submission in all_comments.get_hot(limit=10):
 		flat_comments = praw.helpers.flatten_tree(submission.comments)
 		for comment in flat_comments:
 			
 			if "snoopIt" in comment.body and comment.id not in beenDone:
 				words = re.split(' ', comment.body)
-				words.pop(0)
+				removeCall = words.index('snoopIt')
+		#remove snoopIt from comment 
+				words.pop(removeCall)
 		#words is a list of the words in the comment
 		
 				for entry in words:
@@ -94,7 +96,9 @@ while True:
 
 		#comment result
 				print "reply to comment ", comment.id
+				#check what camment replied to 
 				comment.reply(signature + snoopComment)
+				#add comment id to array
 				beenDone.append(comment.id)
 				
 				snoopComment = ''
@@ -107,4 +111,6 @@ while True:
 			f.write(i + "\n")
 		
 			print "Saved to file"
+			
+	#controls how often the program runs		
 	time.sleep(300)
