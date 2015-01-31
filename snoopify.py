@@ -24,8 +24,8 @@ if not os.path.isfile("beenDone.txt"):
     beenDone = []
 else:
     print "Loading previous reply ids"
-    with open("beenDone.txt", "r") as f:
-        beenDone = f.read()
+    with open("beenDone.txt", "r") as s:
+        beenDone = s.read()
         beenDone = beenDone.split("\n")
         beenDone = filter(None, beenDone)
 
@@ -83,6 +83,8 @@ while True:
 						else:
 							snoopComment += entry[0:last] + "izzle" + " "
 							print " in last else"
+							
+				
 					
 						
 				
@@ -92,6 +94,7 @@ while True:
 
 		#comment result
 				comment.reply(signature + snoopComment)
+				beenDone.append(comment.id)
 				snoopComment = ''
 		#clear for next comment
 		
