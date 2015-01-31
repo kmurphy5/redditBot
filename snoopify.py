@@ -50,11 +50,8 @@ vow = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
 #evaluate comments without worrying about their rank
 	for submission in all_comments:
 		flat_comments = praw.helpers.flatten_tree(submission.comments)
-		for comment in flat_comments:
-					
-		#if comment.id not in beenDone:
-		
-
+		for comments in flat_comments:
+			
 			if "snoopIt" in comment.body and comment.id not in beenDone:
 				words = re.split(' ', comment.body)
 				words.pop(0)
