@@ -44,6 +44,14 @@ vow = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
 
 
 while True:
+	if not os.path.isfile("beenDone.txt"):
+	    beenDone = []
+	else:
+	    print "Loading previous reply ids"
+	    with open("beenDone.txt", "r") as f:
+	        beenDone = f.read()
+	        beenDone = beenDone.split("\n")
+	        beenDone = filter(None, beenDone)
 	
 
 
@@ -93,4 +101,4 @@ while True:
 			f.write(i + "\n")
 		
 			print "Saved to file"
-	#time.sleep(600)
+	time.sleep(300)
