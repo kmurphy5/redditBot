@@ -29,7 +29,7 @@ else:
         beenDone = filter(None, beenDone)
 
 
-all_comments = r.get_subreddit('tessst')
+all_comments = r.get_comments('tessst')
 
 
 #Maintain a list of comments that have been translated so we don't spam
