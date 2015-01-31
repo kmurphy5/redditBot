@@ -31,8 +31,8 @@ else:
 
 
 #used for testing
-all_comments = r.get_subreddit('tessst')
-#all_comments = r.get_subreddit('umw_cpsc470Z')
+#all_comments = r.get_subreddit('tessst')
+all_comments = r.get_subreddit('umw_cpsc470Z')
 
 
 #Maintain a list of comments that have been translated so we don't spam
@@ -73,8 +73,7 @@ while True:
 				for entry in words:
 					
 					last = len(entry)
-					if entry[last-1] == 's':
-						entry[last-1].replace('s','z')
+					
 					if last < 3:
 						snoopComment += entry[0:last] + "z"
 					elif last < 5 and last > 2:
