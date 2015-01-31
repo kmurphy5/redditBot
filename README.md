@@ -1,4 +1,4 @@
-# snoopify
+snoopify
 Simple bot for reddit that searches for the snoopIt in the comment, it then translates the comment 
 to how snoop would say it. 
 
