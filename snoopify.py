@@ -6,6 +6,7 @@ import praw
 import re 
 import pprint
 import os
+import time
 
 #gets password
 with open('passwords.txt', 'r') as passFile:
