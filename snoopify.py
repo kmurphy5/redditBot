@@ -73,7 +73,7 @@ while True:
 					last = len(entry)
 					if last < 3:
 						snoopComment += entry[0:last] + " "
-					else if last < 5 and last > 2:
+					elif last < 5 and last > 2:
 						snoopComment += entry[0:last] + "izzle" + " "
 					else:
 						last = last -1
