@@ -89,7 +89,7 @@ while True:
 							snoopComment += entry[0:last] + "izle" + " "
 							print " in last else"
 							
-					i = i+1 
+						i = i+1 
 					
 						
 				
