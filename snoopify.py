@@ -60,15 +60,15 @@ for comment in all_comments:
 					snoopComment += entry[0:last] + "izzle" + " "
 				else:
 					last = last -1
-					
+					print "in greator than 4 loop"
 					if entry[last] in vow:
-						
+						print "in vow if"
 						last = last -1 
 						snoopComment += entry[0:last] + "izzle" + " "
 					
 					else:
 						snoopComment += entry[0:last] + "izzle" + " "
-						
+						print " in last else"
 					
 						
 				
