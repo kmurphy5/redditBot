@@ -114,7 +114,7 @@ while True:
 		for i in beenDone:
 			f.write(i + "\n")
 		
-	print "Saved to file"
+			print "Saved to file"
 			
 	#controls how often the program runs in seconds	
-	time.sleep(600)
+	time.sleep(800)
