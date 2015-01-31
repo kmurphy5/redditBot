@@ -74,7 +74,7 @@ while True:
 					
 					last = len(entry)
 					if entry[last-1] == 's':
-						entry[i].replace('s','z')
+						entry[last-1].replace('s','z')
 					if last < 3:
 						snoopComment += entry[0:last] + "z"
 					elif last < 5 and last > 2:
