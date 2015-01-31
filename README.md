@@ -11,4 +11,6 @@ whatizzle upizzle
 
 
 
-This bot uses framework from user 
+This bot uses framework from user Fourthofabushel, MattCharles
+
+for it to work you must create a passwords and user text files which contain your username and password
