@@ -43,7 +43,7 @@ vow = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
 
 
 
-#while True:
+while True:
 	
 
 
@@ -93,4 +93,4 @@ vow = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
 			f.write(i + "\n")
 		
 			print "Saved to file"
-	#time.sleep(600)
+	time.sleep(600)
