@@ -39,7 +39,7 @@ all_comments = r.get_subreddit('umw_cpsc470Z')
 
 snoopComment = ''
 punct = ''
-signature = 'Snoop Dog be like \n\n'
+signature = 'Snoop Dog would say \n\n'
 punctuation = (".", ",", ":", "?", "!", ";")
 vow = ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
 
