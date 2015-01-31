@@ -49,7 +49,7 @@ while True:
 
 #evaluate comments without worrying about their rank
 	for submission in all_comments.get_comments():
-		flat_comments = praw.helpers.flatten_tree(submission.comments)
+		flat_comments = praw.helpers.flatten_tree(submission.comment)
 		for comment in flat_comments:
 			
 			if "snoopIt" in comment.body and comment.id not in beenDone:
