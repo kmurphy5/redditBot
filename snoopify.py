@@ -39,52 +39,57 @@ punct = ''
 signature = 'Snoop Dog be like \n\n'
 punctuation = (".", ",", ":", "?", "!", ";")
 vow = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
+
+
+
+
 #while True:
 	
 
 
 #evaluate comments without worrying about their rank
-for comment in all_comments:
-	if comment.id not in beenDone:
+	for comment in all_comments:
+		if comment.id not in beenDone:
 		
 
-		if "snoopIt" in comment.body and comment.id not in beenDone:
-			words = re.split(' ', comment.body)
-			words.pop(0)
+			if "snoopIt" in comment.body and comment.id not in beenDone:
+				words = re.split(' ', comment.body)
+				words.pop(0)
 		#words is a list of the words in the comment
 		
-			for entry in words:
+				for entry in words:
 				
-				last = len(entry)
-				if last < 4:
-					snoopComment += entry[0:last] + "izzle" + " "
-				else:
-					last = last -1
-					print "in greator than 4 loop"
-					if entry[last] in vow:
-						print "in vow if"
-						last = last -1 
+					last = len(entry)
+				
+					if last < 5:
 						snoopComment += entry[0:last] + "izzle" + " "
-					
 					else:
-						snoopComment += entry[0:last] + "izzle" + " "
-						print " in last else"
+						last = last -1
+						print "in greator than 4 loop"
+						if entry[last] in vow:
+							print "in vow if"
+							last = last -1 
+							snoopComment += entry[0:last] + "izzle" + " "
+					
+						else:
+							snoopComment += entry[0:last] + "izzle" + " "
+							print " in last else"
 					
 						
 				
 			
 			#clear punctuation for next word
-				punct = ''
+					punct = ''
 
 		#comment result
-			comment.reply(signature + snoopComment)
-			snoopComment = ''
+				comment.reply(signature + snoopComment)
+				snoopComment = ''
 		#clear for next comment
-			our_comment = ''
-
-print "Saving ids to file"
-with open("beenDone.txt", "w") as f:
-	for i in beenDone:
-		f.write(i + "\n")
 		
-		print "Saved to file"
+
+	print "Saving ids to file"
+	with open("beenDone.txt", "w") as f:
+		for i in beenDone:
+			f.write(i + "\n")
+		
+			print "Saved to file"
