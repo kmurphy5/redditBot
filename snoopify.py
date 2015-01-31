@@ -93,8 +93,10 @@ while True:
 					punct = ''
 
 		#comment result
+				print "reply to comment ", comment.id
 				comment.reply(signature + snoopComment)
 				beenDone.append(comment.id)
+				
 				snoopComment = ''
 		#clear for next comment
 		
