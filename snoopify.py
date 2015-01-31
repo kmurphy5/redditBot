@@ -29,7 +29,7 @@ else:
         beenDone = filter(None, beenDone)
 
 
-all_comments = r.get_comments('tessst')
+all_comments = r.get_subreddit('tessst')
 
 
 #Maintain a list of comments that have been translated so we don't spam
@@ -48,8 +48,11 @@ vow = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
 
 
 #evaluate comments without worrying about their rank
-	for comment in all_comments:
-		if comment.id not in beenDone:
+	for submission in all_comments:
+		flat_comments = praw.helpers.flatten_tree(submission.comments)
+		for comment in flat_comments:
+					
+		#if comment.id not in beenDone:
 		
 
 			if "snoopIt" in comment.body and comment.id not in beenDone:
@@ -93,3 +96,4 @@ vow = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
 			f.write(i + "\n")
 		
 			print "Saved to file"
+	#time.sleep(600)
