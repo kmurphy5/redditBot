@@ -30,7 +30,9 @@ else:
         beenDone = filter(None, beenDone)
 
 
-all_comments = r.get_subreddit('tessst')
+#used for testing
+#all_comments = r.get_subreddit('tessst')
+all_comments = r.get_subreddit('umw_cpsc470Z')
 
 
 #Maintain a list of comments that have been translated so we don't spam
@@ -113,5 +115,5 @@ while True:
 		
 			print "Saved to file"
 			
-	#controls how often the program runs		
-	time.sleep(300)
+	#controls how often the program runs in seconds	
+	time.sleep(600)
