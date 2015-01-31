@@ -31,8 +31,8 @@ else:
 
 
 #used for testing
-#all_comments = r.get_subreddit('tessst')
-all_comments = r.get_subreddit('umw_cpsc470Z')
+all_comments = r.get_subreddit('tessst')
+#all_comments = r.get_subreddit('umw_cpsc470Z')
 
 
 #Maintain a list of comments that have been translated so we don't spam
@@ -71,22 +71,22 @@ while True:
 		#words is a list of the words in the comment
 		
 				for entry in words:
-				
+					entry.replace('s','z')
 					last = len(entry)
 					if last < 3:
 						snoopComment += entry[0:last] + " "
 					elif last < 5 and last > 2:
-						snoopComment += entry[0:last] + "izzle" + " "
+						snoopComment += entry[0:last] + "izle" + " "
 					else:
 						last = last -1
 						print "in greator than 4 loop"
 						if entry[last] in vow:
 							print "in vow if"
 							last = last -1 
-							snoopComment += entry[0:last] + "izzle" + " "
+							snoopComment += entry[0:last] + "izle" + " "
 					
 						else:
-							snoopComment += entry[0:last] + "izzle" + " "
+							snoopComment += entry[0:last] + "izle" + " "
 							print " in last else"
 							
 				
