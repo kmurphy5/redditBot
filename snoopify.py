@@ -73,7 +73,7 @@ while True:
 				for entry in words:
 					
 					last = len(entry)
-					if entry[last] == 's':
+					if entry[last-1] == 's':
 						entry[i].replace('s','z')
 					if last < 3:
 						snoopComment += entry[0:last] + "z"
