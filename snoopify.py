@@ -69,12 +69,12 @@ while True:
 		#remove snoopIt from comment 
 				words.pop(removeCall)
 		#words is a list of the words in the comment
-		
+		i = 0
 				for entry in words:
-					entry.replace('s','z')
+					entry[i].replace('s','z')
 					last = len(entry)
 					if last < 3:
-						snoopComment += entry[0:last] + " "
+						snoopComment += entry[0:last] + "z"
 					elif last < 5 and last > 2:
 						snoopComment += entry[0:last] + "izle" + " "
 					else:
@@ -89,7 +89,7 @@ while True:
 							snoopComment += entry[0:last] + "izle" + " "
 							print " in last else"
 							
-				
+					i = i+1 
 					
 						
 				
