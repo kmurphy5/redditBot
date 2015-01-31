@@ -37,8 +37,8 @@ all_comments = r.get_comments('tessst')
 snoopComment = ''
 punct = ''
 signature = 'Snoop Dog be like \n\n'
-PUNCTUATION = (".", ",", ":", "?", "!", ";")
-
+punctuation = (".", ",", ":", "?", "!", ";")
+vow = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
 #while True:
 	
 
@@ -55,10 +55,23 @@ for comment in all_comments:
 		
 			for entry in words:
 				
-				last = len(entry) -1
-			
-						#if it starts with a vowel, just add -ay
-				snoopComment += entry[0:last] + "izzle" + " "
+				last = len(entry)
+				if last < 4:
+					snoopComment += entry[0:last] + "izzle" + " "
+				else:
+					last = last -1
+					
+					if entry[last] in vow:
+						
+						last = last -1 
+						snoopComment += entry[0:last] + "izzle" + " "
+					
+					else:
+						snoopComment += entry[0:last] + "izzle" + " "
+						
+					
+						
+				
 			
 			#clear punctuation for next word
 				punct = ''
