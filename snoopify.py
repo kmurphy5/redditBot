@@ -7,6 +7,7 @@ import re
 import pprint
 import os
 import time
+import sys
 
 #gets password
 with open('passwords.txt', 'r') as passFile:
@@ -103,12 +104,17 @@ while True:
 		#comment result
 				print "reply to comment ", comment.id
 				#check what camment replied to 
-				response = signature + snoopComment
-				comment.reply(signature + snoopComment)
+				try:
+					
+					comment.reply(signature + snoopComment)
+					beenDone.append(comment.id)
+					break
+				except RateLimitExceeded
+					print "over rate limit"
 				#add comment id to array
-				beenDone.append(comment.id)
+			
 				
-				snoopComment = ''
+			snoopComment = ''
 		#clear for next comment
 		
 
