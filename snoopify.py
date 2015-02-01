@@ -101,6 +101,7 @@ while True:
 		#comment result
 				print "reply to comment ", comment.id
 				#check what camment replied to 
+				response = signature + snoopComment
 				comment.reply(signature + snoopComment)
 				#add comment id to array
 				beenDone.append(comment.id)
