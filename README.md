@@ -5,7 +5,7 @@ to how snoop would say it.
 ex.
 snoopIt whats up 
 
-reply: Snoop be Like 
+reply: Snoop  Like 
 
 whatizzle upizzle
 
