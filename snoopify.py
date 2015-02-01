@@ -109,7 +109,7 @@ while True:
 					comment.reply(signature + snoopComment)
 					beenDone.append(comment.id)
 					break
-				except RateLimitExceeded:
+				except Exception:
 					print "over rate limit"
 				#add comment id to array
 			
