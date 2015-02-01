@@ -75,10 +75,12 @@ while True:
 					last = len(entry)
 					
 					if last < 3:
-						snoopComment += entry[0:last] + "z"
+						#no two letters words are changed
+						snoopComment += entry[0:last] + " "
 					elif last < 5 and last > 2:
 						snoopComment += entry[0:last] + "izle" + " "
 					else:
+						#shortened longer words
 						last = last -1
 						print "in greator than 4 loop"
 						if entry[last] in vow:
@@ -115,7 +117,6 @@ while True:
 		for i in beenDone:
 			f.write(i + "\n")
 		
-			print "Saved to file"
-			
+						
 	#controls how often the program runs in seconds	
 	time.sleep(800)
