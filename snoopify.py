@@ -125,4 +125,4 @@ while True:
 		
 						
 	#controls how often the program runs in seconds	
-	time.sleep(800)
+	time.sleep(600)
